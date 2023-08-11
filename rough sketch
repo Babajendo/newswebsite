@@ -1,0 +1,37 @@
+// connect mongodb
+
+const { MongoClient } = require("mongodb")
+const url = 'mongodb://localhost:27017/hanif'
+const client = MongoClient.connect(url)
+
+
+async () {
+    await client.connect 
+
+    try {
+        await client.connect
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// request/collect the input from the bodyparser 
+const user = require('./data/user')
+const bcrypt = require()
+
+//register user
+const register = async (req, res, next) => {
+    try {
+        const error = validationResult(req.body)
+        if (!error.isEmpty()) {
+            return next
+        } 
+        const isAlreadyExist = await user.find({email: req.body.email})
+        if(!isAlreadyExist) {
+            return next
+        } catch (error) {
+        next(error)
+        } 
+    }
+}    
+  
